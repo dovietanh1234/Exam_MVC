@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model exam_sem3_mvc.Models.Department.EditDepartmentModel
+<h1 class="text-center">Edit department: @Model.name_department</h1>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            @using (Html.BeginForm("Edit", "Department", FormMethod.Post))
+            {
+                @Html.HiddenFor(m=>m.Id)
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.name_department)
+                    @Html.TextBoxFor(m => m.name_department, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.name_department, "", new { @class = "text-danger" })
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            }
+            <div class="mb-3">
+                @Html.ActionLink("Back to List","Index")
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

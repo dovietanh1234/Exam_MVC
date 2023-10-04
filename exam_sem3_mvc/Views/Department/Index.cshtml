@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<exam_sem3_mvc.Entities.Department>
+<h1>Department Page</h1>
+<a asp-controller="Department" asp-action="Create" class="btn btn-primary">
+    Create new Department
+</a>
+<div class="col-6">
+    <table class="table">
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.name_department</td>
+                    <td>
+                        <a href="@Url.ActionLink("Edit","Department", new {id=item.id })"
+                           class="btn btn-warning">Edit</a>
+                        <a href="@Url.ActionLink("Delete","Department", new {id=item.id })"
+                           onclick="return confirm('Bạn muốn xoá department @item.name_department')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

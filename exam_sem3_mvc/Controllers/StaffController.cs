@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace exam_sem3_mvc.Controllers
 {
-	public class StaffController1 : Controller
+	public class StaffController : Controller
 	{
 		private readonly MyDbContext _context;
 
-		public StaffController1(MyDbContext context)
+		public StaffController(MyDbContext context)
 		{
 			 _context = context;
 		}

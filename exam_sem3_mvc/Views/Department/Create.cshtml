@@ -1,0 +1,21 @@
+﻿@model exam_sem3_mvc.Models.Department.DepartmentModel
+<h1 class="text-center">Create department</h1>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            @using (Html.BeginForm("Create", "Department", FormMethod.Post))
+            {
+                <div class="mb-3">
+                    @Html.LabelFor(m=>m.name_department)
+                    @Html.TextBoxFor(m => m.name_department, new {@class="form-control"})
+                    @Html.ValidationMessageFor(m => m.name_department,"", new {@class="text-danger"})
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            }
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
