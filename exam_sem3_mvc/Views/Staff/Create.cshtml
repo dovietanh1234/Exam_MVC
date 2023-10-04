@@ -1,0 +1,41 @@
+﻿@model exam_sem3_mvc.Models.StaffModel.StaffModel
+
+<h1 class="text-center">Create staff</h1>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            @using (Html.BeginForm("Create", "Staff", FormMethod.Post))
+            {
+                <div class="mb-3">
+
+                    @*
+                For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+
+                    @Html.LabelFor(m=>m)
+                    @Html.TextBoxFor(m => m.name, new {@class="form-control"})
+                    @Html.ValidationMessageFor(m => m.name,"", new {@class="text-danger"})
+                *@
+
+                    @Html.LabelFor(m=>m.name)
+                    @Html.TextBoxFor(m => m.name, new {@class="form-control"})
+                    @Html.ValidationMessageFor(m => m.name,"", new {@class="text-danger"})
+
+                    @Html.LabelFor(m=>m.position)
+                    @Html.TextBoxFor(m => m.position, new {@class="form-control"})
+                    @Html.ValidationMessageFor(m => m.position,"", new {@class="text-danger"})
+
+                    @Html.LabelFor(m=>m.department_id)
+                    @Html.TextBoxFor(m => m.department_id, new {@class="form-control"})
+                    @Html.ValidationMessageFor(m => m.department_id,"", new {@class="text-danger"})
+
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            }
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
